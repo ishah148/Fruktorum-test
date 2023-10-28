@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+@import "variables";
+@import "header";
+@import "footer";
+@import "ui/input";
+
+:root {
+  --primary-color: red;
+  --primary-background: #fefefe;
+  --primary-padding: #{$primary-padding};
+  --primary-black: #1b1b1b;
+  --light-font-color: #ffffff;
+  --text-gray: #8d959c;
+}
+@media (max-width: $tablet-size) {
+  :root{
+    --primary-padding: 10px;
+  }
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 66px;
+  letter-spacing: 0em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  text-align: left;
+  font-style: normal;
+  background: var(--primary-background);
+}
+
+body {
+  max-width: $page-width;
+  margin: auto;
+  background: var(--primary-background);
+}
+
+.btn {
+  max-width: 223px;
+  height: 46px;
+  border-radius: 2px;
+  background: #3657d3;
+  color: var(--light-font-color);
+  &:hover {
+    background: transparent;
+    border: 1px solid #3657D3
+  }
+}
+
+.btn-dark {
+  width: 164px;
+  height: 46px;
+  background: #1b1b1b;
+  border-radius: 2px;
+  color: #ffffff;
+  &:hover {
+    background: #3657d3;
+  }
+}
+
+.grey{
+  color: var(--text-gray)
+}
