@@ -19,7 +19,6 @@ export default function useComponent() {
   type cmpKeys = keyof typeof componentList;
 
   function getComponent(cmpName: cmpKeys | string) {
-    console.log("cmpName",cmpName)
     if (!(cmpName in componentList)) {
       return null;
     }

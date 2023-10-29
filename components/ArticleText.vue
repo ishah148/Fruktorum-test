@@ -25,17 +25,19 @@ const props = defineProps<{
   ul {
     max-width: 700px;
     margin-inline: auto;
-    padding-left: 1em;
+    padding-left: 16px;
     margin-bottom: 16px;
-
     list-style-type: none;
   }
-
-  ul > li::before {
+  li{
+    margin-left: 8px;
+  }
+  ul li::before {
     content: "\25C6";
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    width: 16px;
+    margin-left: -16px;
+    margin-right: 8px;
   }
 
   blockquote {

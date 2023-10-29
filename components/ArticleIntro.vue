@@ -14,11 +14,7 @@
         </div>
       </div>
       <div class="description">
-        Впечатляющий путь, где художническая креативность сливается с передовыми
-        технологиями. Это искусство способно преобразить наше восприятие о том,
-        что возможно в виртуальных мирах; как границы возможностей расширяются,
-        и как велика сила человеческой фантазии, воплощенной в трехмерные
-        шедевры
+        {{ props.data.short_description }}
       </div>
     </div>
   </div>
@@ -29,7 +25,6 @@ import type { ArticleIntroData } from "~/types";
 import WatchIcon from "assets/icons/watch-icon.svg";
 import TimeIcon from "assets/icons/time-icon.svg";
 const props = defineProps<{ data: ArticleIntroData }>();
-console.log("props",props)
 </script>
 
 <style lang="scss">
@@ -44,7 +39,6 @@ console.log("props",props)
   @media (max-width: $xl-size) {
     flex-direction: column;
   }
-
 }
 
 .article__image {
@@ -69,6 +63,4 @@ console.log("props",props)
   font-size: 18px;
   line-height: 26px;
 }
-
-
 </style>

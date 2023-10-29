@@ -49,7 +49,6 @@
     width: 100%;
 
     @media (max-width: $md-size) {
-      // todo move to var
       justify-content: center;
     }
 

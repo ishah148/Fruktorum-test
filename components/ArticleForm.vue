@@ -1,12 +1,17 @@
 <template>
   <div class="article-form__wrapper">
     <div class="article-form__container">
-      <img :src="photo" alt="" class="article-form__image"/>
+      <img :src="photo" alt="" class="article-form__image" />
       <div class="article-form__form-container">
         <h2 class="article-form__invite-text">Стань участником проекта</h2>
-        <input class="blog-input" type="text" name="text" placeholder="Имя"/>
-        <input class="blog-input" type="tel" name="tel" placeholder="Телефон"/>
-        <input class="blog-input" type="email" name="email" placeholder="Email"/>
+        <input class="blog-input" type="text" name="text" placeholder="Имя" />
+        <input class="blog-input" type="tel" name="tel" placeholder="Телефон" />
+        <input
+          class="blog-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+        />
         <button class="article-form__submit-btn btn">Присоединится</button>
       </div>
     </div>
@@ -50,7 +55,7 @@ import photo from "assets/images/form-photo.png";
     color: var(--light-font-color);
   }
 
-  .article-form__submit-btn{
+  .article-form__submit-btn {
     margin-top: 50px;
   }
 }

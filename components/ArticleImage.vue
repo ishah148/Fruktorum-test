@@ -1,7 +1,9 @@
 <template>
   <div class="article-image__wrapper">
     <img :src="props.data.src" :alt="props.data.caption" />
-    <p v-if="props.data.caption" class="article-image__capture font-body-2">{{ props.data.caption }}</p>
+    <p v-if="props.data.caption" class="article-image__capture font-body-2">
+      {{ props.data.caption }}
+    </p>
   </div>
 </template>
 

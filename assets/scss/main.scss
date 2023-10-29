@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,regular,800,300italic,italic&display=swap&subset=cyrillic");
 @import "variables";
-@import "header";
-@import "footer";
 @import "ui/input";
 
 :root {
@@ -64,6 +62,7 @@ html {
   text-align: left;
   font-style: normal;
   background: var(--primary-background);
+  overflow-x: hidden;
 }
 
 input,
@@ -72,9 +71,15 @@ button {
 }
 
 body {
-  max-width: $page-width;
+  width: 100vw;
+  //max-width: $page-width;
   margin: auto;
   background: var(--primary-background);
+}
+
+main {
+  max-width: $page-width;
+  margin: auto;
 }
 
 .btn {
@@ -105,4 +110,11 @@ body {
 
 .grey {
   color: var(--text-gray);
+}
+
+svg{
+  &:hover{
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }

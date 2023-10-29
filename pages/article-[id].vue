@@ -48,7 +48,7 @@
 import { FetchError } from "ofetch";
 import type { Component } from "@nuxt/schema";
 import type { Article, ArticleBody } from "~/types";
-import ArticleSlider from "~/components/ArticleSlider.vue";
+
 import useComponent from "~/composables/useComponens";
 
 const route = useRoute();
@@ -56,8 +56,6 @@ const { id } = route.params;
 
 const { getComponent } = useComponent();
 
-const articleIntroData = ref<any>();
-const articleTextData = ref<any>();
 const articlesTypesRef = ref<ArticleBody[]>();
 
 await fetchArticle(id as string);
@@ -69,14 +67,10 @@ async function fetchArticle(id: string | undefined) {
   const response = await useFetch<Article>(`/api/article-${id}`);
   if (!response) return;
 
-  const components = (response.data?.value as Article)?.body;
-  const articlesType = response?.data?.value?.body?.[0].type;
   const articlesTypes = response?.data?.value?.body as ArticleBody[];
 
   articlesTypesRef.value = articlesTypes;
 
-  articleIntroData.value = articlesTypes[0].data;
-  articleTextData.value = articlesTypes[1].data;
   console.log("articlesType", articlesTypes);
 }
 </script>

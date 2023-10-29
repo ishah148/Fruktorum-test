@@ -18,13 +18,12 @@ import type { ArticlesPreviewInfo } from "~/types/index";
 
 const props = defineProps<{
   data: {
-    body: ArticlesPreviewInfo[]
+    body: ArticlesPreviewInfo[];
     articles: ArticlesPreviewInfo[];
     title?: string;
   };
 }>();
 const body = computed(() => props.data?.articles || props.data?.body);
-console.log("props.data?.body", props.data?.body);
 </script>
 
 <style lang="scss">
