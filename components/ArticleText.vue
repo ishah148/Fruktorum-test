@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <style lang="scss">
 .article-text__wrapper {
-  padding:0 var(--primary-padding) 10px;
+  padding: 0 var(--primary-padding) 10px;
   margin: 0 auto 100px;
   max-width: 884px;
 
@@ -29,7 +29,7 @@ const props = defineProps<{
     margin-bottom: 16px;
     list-style-type: none;
   }
-  li{
+  li {
     margin-left: 8px;
   }
   ul li::before {

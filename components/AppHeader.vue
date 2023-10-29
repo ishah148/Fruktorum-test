@@ -17,7 +17,6 @@ header {
   justify-content: center;
   background: var(--primary-background);
   padding: 0 var(--primary-padding);
-
 }
 .logo__container {
   width: 133px;

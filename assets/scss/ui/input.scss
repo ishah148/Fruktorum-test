@@ -1,4 +1,4 @@
-.blog-input{
+.blog-input {
   border-bottom: 1px solid var(--text-gray);
   background-color: inherit;
   color: var(--light-font-color);
@@ -6,7 +6,7 @@
   font-size: 18px;
   line-height: 26px;
   &:focus,
-  &:active{
+  &:active {
     border-bottom: 1px solid var(--blue-font-color);
   }
 }

@@ -7,18 +7,18 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
     },
   },
-  modules: ["@nuxtjs/eslint-module", "nuxt-svgo", "nuxt-swiper","@pinia/nuxt"],
+  modules: ["@nuxtjs/eslint-module", "nuxt-svgo", "nuxt-swiper", "@pinia/nuxt"],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/scss/variables" as *;'
-        }
-      }
-    }
+          additionalData: '@use "@/assets/scss/variables" as *;',
+        },
+      },
+    },
   },
   typescript: {
-    typeCheck: true
-  }
+    typeCheck: true,
+  },
   // modules: ["nuxt-svgo"],
 });

@@ -57,7 +57,13 @@ export interface Article {
 export interface ArticleBody {
   type: cmpKeys;
   id: string;
-  data: string[] | ArticleData | string | ArticleIntroData | ArticleSliderData | ArticleBlockData;
+  data:
+    | string[]
+    | ArticleData
+    | string
+    | ArticleIntroData
+    | ArticleSliderData
+    | ArticleBlockData;
 }
 
 export interface ArticleData {
@@ -102,18 +108,16 @@ export interface ArticleIntroData {
 
 export type ArticleSliderData = string[];
 
-export interface AtricleListBlock{
-
-}
+export interface AtricleListBlock {}
 
 export interface ArticleBlockData {
-  title:    string;
+  title: string;
   articles: ArticleShortInfo[];
 }
 
 export interface ArticleShortInfo {
   title: string;
-  link:  string;
+  link: string;
   image: string;
 }
 
