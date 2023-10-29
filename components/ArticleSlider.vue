@@ -1,30 +1,21 @@
-<template>
-  <div class="slider__wrapper">
-    <Swiper
-      navigation
-      :modules="[SwiperNavigation, SwiperEffectCreative]"
-      :slides-per-view="1"
-      :loop="true"
-      :effect="'creative'"
-      :autoplay="{
-        delay: 8000,
-        disableOnInteraction: true,
-      }"
-      :creative-effect="{
-        prev: {
-          shadow: false,
-          translate: ['-100%', 0, -1],
-        },
-        next: {
-          translate: ['100%', 0, 0],
-        },
-      }"
-    >
-      <SwiperSlide v-for="(slide, id) in props.data" :key="id + Math.random()">
-        <img :src="slide" alt="" />
-      </SwiperSlide>
-    </Swiper>
-  </div>
+<template lang="pug">
+html
+  body
+    div(class="slider__wrapper")
+      Swiper(navigation, :modules="[SwiperNavigation, SwiperEffectCreative]", :slides-per-view="1", :loop="true", :effect="'creative'", :autoplay=`{
+      delay: 8000,
+      disableOnInteraction: true,
+    }`, :creative-effect=`{
+      prev: {
+        shadow: false,
+        translate: ['-100%', 0, -1],
+      },
+      next: {
+        translate: ['100%', 0, 0],
+      },
+    }`)
+        SwiperSlide(v-for="(slide, id) in props.data", :key="id + Math.random()")
+          img(:src="slide", alt="photo")
 </template>
 
 <script setup lang="ts">

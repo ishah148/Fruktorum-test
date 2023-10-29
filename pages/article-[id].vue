@@ -1,12 +1,10 @@
-<template>
-  <div>
-    <h3 v-if="store.errorMessage" class="error-message">
-      {{ store.errorMessage }}
-    </h3>
-    <template v-for="item in articlesData" :key="item.id">
-      <Component :is="getComponent(item.type)" :data="item.data" />
-    </template>
-  </div>
+<template lang="pug">
+html
+  body
+    div
+      h3.error-message(v-if="store.errorMessage") {{ store.errorMessage }}
+      template(v-for="item in articlesData", :key="item.id")
+        Component(:is="getComponent(item.type)", :data="item.data")
 </template>
 <script setup lang="ts">
 import useComponent from "~/composables/useComponens";

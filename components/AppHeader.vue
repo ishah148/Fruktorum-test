@@ -1,9 +1,10 @@
-<template>
-  <header>
-    <div class="logo__container">
-      <NuxtLink to="/"> <logo class="logo__icon" filled /></NuxtLink>
-    </div>
-  </header>
+<template lang="pug">
+html
+  body
+    header
+      div(class="logo__container")
+        NuxtLink(to="/")
+          logo(class="logo__icon", filled)
 </template>
 <script setup lang="ts">
 import logo from "@/assets/icons/logo.svg";

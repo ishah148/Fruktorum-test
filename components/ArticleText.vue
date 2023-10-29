@@ -1,5 +1,7 @@
-<template>
-  <div class="article-text__wrapper" v-html="props.data"></div>
+<template lang="pug">
+html
+body
+  div(class="article-text__wrapper", v-html="props.data")
 </template>
 
 <script setup lang="ts">

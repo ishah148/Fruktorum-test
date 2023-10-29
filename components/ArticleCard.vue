@@ -1,16 +1,13 @@
-<template>
-  <div class="article-card">
-    <div style="position: relative">
-      <img class="img" :src="props.image" alt="img" />
-      <Loader v-if="isLoading" />
-    </div>
-    <p class="article-card__description">
-      {{ props.title }}
-    </p>
-    <NuxtLink :to="props.link">
-      <button class="btn-dark">Читать</button>
-    </NuxtLink>
-  </div>
+<template lang="pug">
+html
+  body
+    .article-card
+      div(style="position: relative")
+        img.img(:src="props.image", alt="img")
+        Loader(v-if="isLoading")
+      p(class="article-card__description") {{ props.title }}
+      NuxtLink(:to="props.link")
+        button.btn-dark Читать
 </template>
 
 <script setup lang="ts">

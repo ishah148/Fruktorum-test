@@ -1,41 +1,29 @@
-<template>
-  <footer class="footer__wrapper">
-    <div class="footer__container">
-      <div class="footer__content">
-        <div class="blog-description">
-          <div class="blog-description__logo logo__container">
-            <logo class="logo__icon" filled />
-          </div>
-          <p class="blog-description__info font-body-2">
-            Cтатьи о дизайне и искусстве, которые исследуют творческие
-            вдохновения и актуальные тенденции, раскрывая мир эстетики и
-            креативности
-          </p>
-        </div>
-        <div class="blog-contacts__container">
-          <p class="blog-contacts__email">email</p>
-          <p>testblogsupport@gmail.com</p>
-          <div class="blog-contacts__logos-container">
-            <facebook filled />
-            <instagram filled />
-            <telegram filled />
-            <vk filled />
-          </div>
-        </div>
-      </div>
-      <div class="subscribe">
-        <p class="description__text">Подпишись на рассылку</p>
-        <div class="description__subscribe-container">
-          <input
-            class="description__input blog-input"
-            type="email"
-            placeholder="email"
-          />
-          <button class="description__btn btn">Подписаться</button>
-        </div>
-      </div>
-    </div>
-  </footer>
+<template lang="pug">
+html
+body
+  footer(class="footer__wrapper")
+    div(class="footer__container")
+      div(class="footer__content")
+        .blog-description
+          div(class="blog-description__logo logo__container")
+            logo(class="logo__icon", filled)
+              p(class="blog-description__info font-body-2")
+                | Cтатьи о дизайне и искусстве, которые исследуют творческие
+                | вдохновения и актуальные тенденции, раскрывая мир эстетики и
+                | креативности
+              div(class="blog-contacts__container")
+                p(class="blog-contacts__email") email
+                p testblogsupport@gmail.com
+                div(class="blog-contacts__logos-container")
+                  facebook(filled)
+                    instagram(filled)
+                      telegram(filled)
+                        vk(filled)
+                          .subscribe
+                            p(class="description__text") Подпишись на рассылку
+                            div(class="description__subscribe-container")
+                              input(class="description__input blog-input", type="email", placeholder="email")
+                              button(class="description__btn btn") Подписаться
 </template>
 
 <script setup lang="ts">

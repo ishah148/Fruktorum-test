@@ -1,7 +1,8 @@
-<template>
-  <div class="container">
-    <div class="loader"></div>
-  </div>
+<template lang="pug">
+html
+  body
+    .container
+      .loader
 </template>
 
 <style scoped lang="scss">

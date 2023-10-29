@@ -1,23 +1,22 @@
-<template>
-  <div class="article__wrapper">
-    <img class="article__image" :src="props.data?.image" alt="" />
-    <div class="article__description-container">
-      <h1 class="short-description">{{ props.data.title }}</h1>
-      <div class="info font-body-2">
-        <div class="info__count-container">
-          <TimeIcon filled />
-          {{ props.data.views_count }} прочитали статью
-        </div>
-        <div class="info__time-container">
-          <WatchIcon filled />
-          {{ props.data.reading_time }} мин время чтения
-        </div>
-      </div>
-      <div class="description">
-        {{ props.data.short_description }}
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+html
+  body
+    div(class="article__wrapper")
+      img(class="article__image", :src="props.data?.image", alt="photo")
+      div(class="article__description-container")
+        h1.short-description {{ props.data.title }}
+        .info.font-body-2
+          div(class="info__count-container")
+            TimeIcon(filled)
+
+            | {{ props.data.views_count }}
+            | прочитали статью
+          div(class="info__time-container")
+            WatchIcon(filled)
+
+            | {{ props.data.reading_time }}
+            | мин время чтения
+        .description {{ props.data.short_description }}
 </template>
 
 <script setup lang="ts">
