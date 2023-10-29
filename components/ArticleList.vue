@@ -14,12 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticlesPreviewInfo } from "~/types/index";
+import type { ArticlesPreviewInfo } from "~/types";
 
-const props = defineProps<{
+const props =   defineProps<{
   data: {
-    body: ArticlesPreviewInfo[];
-    articles: ArticlesPreviewInfo[];
+    body?: ArticlesPreviewInfo[];
+    articles?: ArticlesPreviewInfo[];
     title?: string;
   };
 }>();

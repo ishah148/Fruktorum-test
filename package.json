@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier .  --write --end-of-line crlf"
+    "format": "prettier .  --write --end-of-line crlf",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.vue,.ts ."
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

@@ -45,6 +45,10 @@ const props = defineProps<{ data: ArticleIntroData }>();
   width: 100%;
   height: 100%;
   border-top-right-radius: 200px;
+  max-width: 70%;
+  @media (max-width: $md-size) {
+    border-top-right-radius: 150px;
+  }
 }
 
 .short-description {

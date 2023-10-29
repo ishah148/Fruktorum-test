@@ -1,16 +1,16 @@
 <template>
   <div class="slider__wrapper">
     <Swiper
-        navigation
-        :modules="[SwiperNavigation, SwiperEffectCreative]"
-        :slides-per-view="1"
-        :loop="true"
-        :effect="'creative'"
-        :autoplay="{
+      navigation
+      :modules="[SwiperNavigation, SwiperEffectCreative]"
+      :slides-per-view="1"
+      :loop="true"
+      :effect="'creative'"
+      :autoplay="{
         delay: 8000,
         disableOnInteraction: true,
       }"
-        :creative-effect="{
+      :creative-effect="{
         prev: {
           shadow: false,
           translate: ['-100%', 0, -1],
@@ -21,7 +21,7 @@
       }"
     >
       <SwiperSlide v-for="(slide, id) in props.data" :key="id + Math.random()">
-        <img :src="slide" alt=""/>
+        <img :src="slide" alt="" />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -31,12 +31,9 @@
 const props = defineProps<{
   data: string[];
 }>();
-
-const srcList: string[] = ["https://devtwit8.ru/img/1.png", "https://devtwit8.ru/img/2.png", "https://devtwit8.ru/img/3.png", "https://devtwit8.ru/img/4.png",];
 </script>
 
 <style lang="scss">
-
 .slider__wrapper {
   margin-bottom: 100px;
 }
@@ -50,9 +47,12 @@ const srcList: string[] = ["https://devtwit8.ru/img/1.png", "https://devtwit8.ru
 .swiper-button-next {
   width: 60px;
   height: 60px;
-  background: #1b1b1b;
+  background: var(--primary-black);
 
-  &:after {
+  &:hover {
+    background: var(--blue-font-color);
+  }
+  &::after {
     font-size: 12px;
     font-weight: 800;
     color: #d9d9d9;
@@ -60,7 +60,6 @@ const srcList: string[] = ["https://devtwit8.ru/img/1.png", "https://devtwit8.ru
 }
 
 .swiper-wrapper {
-
   img {
     width: 100%;
     object-fit: cover;
@@ -70,5 +69,4 @@ const srcList: string[] = ["https://devtwit8.ru/img/1.png", "https://devtwit8.ru
     }
   }
 }
-
 </style>

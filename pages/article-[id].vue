@@ -45,22 +45,16 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FetchError } from "ofetch";
-import type { Component } from "@nuxt/schema";
 import type { Article, ArticleBody } from "~/types";
-
 import useComponent from "~/composables/useComponens";
 
 const route = useRoute();
 const { id } = route.params;
 
 const { getComponent } = useComponent();
-
 const articlesTypesRef = ref<ArticleBody[]>();
 
 await fetchArticle(id as string);
-const article = ref<Article | FetchError | null>();
-const cmpKeys = ref<Component[]>([]);
 
 async function fetchArticle(id: string | undefined) {
   if (!id) return;

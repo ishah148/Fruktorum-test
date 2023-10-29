@@ -51,8 +51,10 @@ import vk from "@/assets/icons/vk.svg";
 
 .footer__wrapper {
   width: 100vw;
+  max-width: 100%;
   border-top: 1px solid var(--primary-black);
   margin-top: 200px;
+
   .footer__container {
     max-width: $page-width;
     margin: 0 auto 0;
@@ -82,10 +84,6 @@ import vk from "@/assets/icons/vk.svg";
   max-width: 426px;
   height: 112px;
 
-  .blog-description__logo {
-    //
-  }
-
   .blog-description__info {
     color: var(--text-gray);
     margin-top: 20px;
@@ -113,6 +111,7 @@ import vk from "@/assets/icons/vk.svg";
       width: 30px;
       height: 30px;
     }
+
     .subscribe {
       height: 100px;
       background: var(--primary-black);
