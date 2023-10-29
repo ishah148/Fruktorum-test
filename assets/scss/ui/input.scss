@@ -3,4 +3,10 @@
   background-color: inherit;
   color: var(--light-font-color);
   text-transform: capitalize;
+  font-size: 18px;
+  line-height: 26px;
+  &:focus,
+  &:active{
+    border-bottom: 1px solid var(--blue-font-color);
+  }
 }

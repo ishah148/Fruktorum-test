@@ -12,6 +12,7 @@
     </NuxtLink>
   </div>
 </template>
+
 <script setup lang="ts">
 import { useImage } from "@vueuse/core";
 
@@ -20,7 +21,8 @@ import Loader from "~/components/ui/Loader.vue";
 const props = defineProps<{ title: string; link: string; image: string }>();
 const { isLoading } = useImage({ src: props.image });
 </script>
-<style lang="scss" scoped>
+
+<style lang="scss">
 .article-card {
   display: flex;
   flex-direction: column;

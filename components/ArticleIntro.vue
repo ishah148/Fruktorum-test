@@ -1,9 +1,9 @@
 <template>
   <div class="article__wrapper">
-    <img class="article__image" :src="props.data.image" alt="" />
+    <img class="article__image" :src="props.data?.image" alt="" />
     <div class="article__description-container">
       <h1 class="short-description">{{ props.data.title }}</h1>
-      <div class="info">
+      <div class="info font-body-2">
         <div class="info__count-container">
           <TimeIcon filled />
           {{ props.data.views_count }} прочитали статью
@@ -28,8 +28,8 @@
 import type { ArticleIntroData } from "~/types";
 import WatchIcon from "assets/icons/watch-icon.svg";
 import TimeIcon from "assets/icons/time-icon.svg";
-
 const props = defineProps<{ data: ArticleIntroData }>();
+console.log("props",props)
 </script>
 
 <style lang="scss">
@@ -39,9 +39,12 @@ const props = defineProps<{ data: ArticleIntroData }>();
   padding: 0 var(--primary-padding);
   display: flex;
   gap: 30px;
-  @media (max-width: $tablet-size) {
+  margin-bottom: 100px;
+
+  @media (max-width: $xl-size) {
     flex-direction: column;
   }
+
 }
 
 .article__image {
@@ -55,9 +58,6 @@ const props = defineProps<{ data: ArticleIntroData }>();
 }
 
 .info {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
   letter-spacing: 0em;
   margin-bottom: 50px;
 
@@ -69,4 +69,6 @@ const props = defineProps<{ data: ArticleIntroData }>();
   font-size: 18px;
   line-height: 26px;
 }
+
+
 </style>

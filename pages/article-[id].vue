@@ -1,18 +1,66 @@
 <template>
-  <ArticleIntro :data="articleIntroData" />
-  <ArticleText :data="articleIntroData" />
+  <div>
+<!--    <ArticleIntro v-if="articleIntroData" :data="articleIntroData" />-->
+<!--    <ArticleText :data="articleTextData" />-->
+<!--    <ArticleImage-->
+<!--        :data="{ src: 'https://devtwit8.ru/img/3.png', caption: '123' }"-->
+<!--    />-->
+<!--    <ArticleSlider-->
+<!--        :data="[-->
+<!--          'https://devtwit8.ru/img/1.png',-->
+<!--          'https://devtwit8.ru/img/2.png',-->
+<!--          'https://devtwit8.ru/img/3.png',-->
+<!--          'https://devtwit8.ru/img/4.png',-->
+<!--        ]"-->
+<!--    />-->
+<!--    <ArticleSubscribe />-->
+<!--    <ArticleList-->
+<!--        :data="{-->
+<!--          title: '12377',-->
+<!--          body: [-->
+<!--            {-->
+<!--              title: 'Есть над чем задуматься: небо темнеет',-->
+<!--              link: '/article-2',-->
+<!--              image: 'https://devtwit8.ru/img/p2.png',-->
+<!--            },-->
+<!--            {-->
+<!--              title:-->
+<!--                'Мелочь, а приятно: чистосердечное признание облегчает душу',-->
+<!--              link: '/article-3',-->
+<!--              image: 'https://devtwit8.ru/img/p3.png',-->
+<!--            },-->
+<!--            {-->
+<!--              title:-->
+<!--                'Очевидцы сообщают, что слышали старческий скрип Амстердама',-->
+<!--              link: '/article-4',-->
+<!--              image: 'https://devtwit8.ru/img/p4.png',-->
+<!--            },-->
+<!--          ],-->
+<!--        }"-->
+<!--    />-->
+<!--    <ArticleForm />-->
+    <template v-for="item in articlesTypesRef" :key="item.id">
+      <Component :is="getComponent(item.type)" :data="item.data" />
+    </template>
+  </div>
 </template>
 <script setup lang="ts">
 import { FetchError } from "ofetch";
 import type { Component } from "@nuxt/schema";
 import type { Article, ArticleBody } from "~/types";
+import ArticleSlider from "~/components/ArticleSlider.vue";
+import useComponent from "~/composables/useComponens";
 
 const route = useRoute();
 const { id } = route.params;
 
-const articleIntroData = ref<any>();
+const { getComponent } = useComponent();
 
-fetchArticle(id as string);
+const articleIntroData = ref<any>();
+const articleTextData = ref<any>();
+const articlesTypesRef = ref<ArticleBody[]>();
+
+await fetchArticle(id as string);
 const article = ref<Article | FetchError | null>();
 const cmpKeys = ref<Component[]>([]);
 
@@ -25,7 +73,10 @@ async function fetchArticle(id: string | undefined) {
   const articlesType = response?.data?.value?.body?.[0].type;
   const articlesTypes = response?.data?.value?.body as ArticleBody[];
 
+  articlesTypesRef.value = articlesTypes;
+
   articleIntroData.value = articlesTypes[0].data;
+  articleTextData.value = articlesTypes[1].data;
   console.log("articlesType", articlesTypes);
 }
 </script>

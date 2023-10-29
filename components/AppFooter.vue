@@ -5,7 +5,7 @@
         <div class="blog-description__logo logo__container">
           <logo class="logo__icon" filled />
         </div>
-        <p class="blog-description__info">
+        <p class="blog-description__info font-body-2">
           Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения
           и актуальные тенденции, раскрывая мир эстетики и креативности
         </p>
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="footer__description">
+    <div class="subscribe">
       <p class="description__text">Подпишись на рассылку</p>
       <div class="description__subscribe-container">
         <input
@@ -46,6 +46,7 @@ import vk from "@/assets/icons/vk.svg";
 <style lang="scss">
 @import "assets/scss/variables";
 .footer__wrapper {
+  margin-top: 200px;
   padding: 50px var(--primary-padding) 0;
   background: var(--primary-background);
   width: 100%;
@@ -61,7 +62,7 @@ import vk from "@/assets/icons/vk.svg";
   width: 100%;
   justify-content: space-between;
 
-  @media (max-width: $tablet-size) {
+  @media (max-width: $md-size) {
     margin-right: 20px;
     flex-direction: column;
   }
@@ -74,8 +75,6 @@ import vk from "@/assets/icons/vk.svg";
     //
   }
   .blog-description__info {
-    font-size: 14px;
-    line-height: 20px;
     color: var(--text-gray);
     margin-top: 20px;
   }
@@ -83,7 +82,7 @@ import vk from "@/assets/icons/vk.svg";
 .blog-contacts__container {
   width: 234px;
   margin-right: 78px;
-  @media (max-width: $tablet-size) {
+  @media (max-width: $md-size) {
     margin-right: 20px;
   }
   .blog-contacts__email {
@@ -101,13 +100,13 @@ import vk from "@/assets/icons/vk.svg";
   }
 }
 
-.footer__description {
+.subscribe {
   height: 100px;
   background: var(--primary-black);
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
-  @media (max-width: $tablet-size) {
+  @media (max-width: $md-size) {
     padding: 0 10px;
     flex-direction: column;
   }
@@ -128,7 +127,7 @@ import vk from "@/assets/icons/vk.svg";
     gap: 37px;
     width: 100%;
 
-    @media (max-width: $tablet-size) {
+    @media (max-width: $md-size) {
       // todo move to var
       justify-content: center;
     }
@@ -141,7 +140,6 @@ import vk from "@/assets/icons/vk.svg";
       flex: 1;
     }
     .description__btn {
-      font-size: 18px;
       flex: 1;
     }
   }

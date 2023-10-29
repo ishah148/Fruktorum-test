@@ -1,30 +1,45 @@
 <template>
-  <div class="article-list">
-    <ArticleCard
-      v-for="article in body"
-      :key="article.link"
-      :image="article.image"
-      :title="article.title"
-      :link="article.link"
-    />
+  <div class="article-list__wrapper">
+    <h2 v-if="data?.title">{{ data.title }}</h2>
+    <div class="article-list__container">
+      <ArticleCard
+        v-for="article in body"
+        :key="article.title"
+        :image="article.image"
+        :title="article.title"
+        :link="article.link"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { ArticlesPreviewInfo } from "~";
+import type { ArticlesPreviewInfo } from "~/types/index";
 
-defineProps<{
-  body: ArticlesPreviewInfo[];
+const props = defineProps<{
+  data: {
+    body: ArticlesPreviewInfo[]
+    articles: ArticlesPreviewInfo[];
+    title?: string;
+  };
 }>();
+const body = computed(() => props.data?.articles || props.data?.body);
+console.log("props.data?.body", props.data?.body);
 </script>
 
-<style scoped lang="scss">
-.article-list {
-  display: grid;
-  grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 427px));
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 40px;
+<style lang="scss">
+.article-list__wrapper {
+  h2 {
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+  .article-list__container {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 427px));
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
 }
 </style>

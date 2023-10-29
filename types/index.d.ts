@@ -57,7 +57,7 @@ export interface Article {
 export interface ArticleBody {
   type: cmpKeys;
   id: string;
-  data: string[] | ArticleData | string | ArticleIntroData | ArticleTextData;
+  data: string[] | ArticleData | string | ArticleIntroData | ArticleSliderData | ArticleBlockData;
 }
 
 export interface ArticleData {
@@ -100,8 +100,25 @@ export interface ArticleIntroData {
   views_count: number;
 }
 
-export interface ArticleTextData {
-  data: string;
-  id: string;
-  type: string;
+export type ArticleSliderData = string[];
+
+export interface AtricleListBlock{
+
 }
+
+export interface ArticleBlockData {
+  title:    string;
+  articles: ArticleShortInfo[];
+}
+
+export interface ArticleShortInfo {
+  title: string;
+  link:  string;
+  image: string;
+}
+
+// export interface ArticleTextData {
+//   data: string;
+//   id: string;
+//   type: string;
+// }

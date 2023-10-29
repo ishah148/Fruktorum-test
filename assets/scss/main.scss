@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,regular,800,300italic,italic&display=swap&subset=cyrillic");
 @import "variables";
 @import "header";
 @import "footer";
@@ -10,10 +10,12 @@
   --primary-padding: #{$primary-padding};
   --primary-black: #1b1b1b;
   --light-font-color: #ffffff;
+  --blue-font-color: #3657d3;
   --text-gray: #8d959c;
 }
-@media (max-width: $tablet-size) {
-  :root{
+
+@media (max-width: $md-size) {
+  :root {
     --primary-padding: 10px;
   }
 }
@@ -23,6 +25,26 @@ h1 {
   font-weight: 800;
   line-height: 66px;
   letter-spacing: 0em;
+  @media (max-width: $sm-size) {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 46px;
+  letter-spacing: 0em;
+  text-align: left;
+  @media (max-width: $sm-size) {
+    font-size: 28px;
+  }
+}
+
+.font-body-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 * {
@@ -44,6 +66,11 @@ html {
   background: var(--primary-background);
 }
 
+input,
+button {
+  font-family: Montserrat, sans-serif;
+}
+
 body {
   max-width: $page-width;
   margin: auto;
@@ -54,11 +81,13 @@ body {
   max-width: 223px;
   height: 46px;
   border-radius: 2px;
-  background: #3657d3;
+  background: var(--blue-font-color);
   color: var(--light-font-color);
+  font-size: 18px;
+
   &:hover {
     background: transparent;
-    border: 1px solid #3657D3
+    border: 1px solid var(--blue-font-color);
   }
 }
 
@@ -68,11 +97,12 @@ body {
   background: #1b1b1b;
   border-radius: 2px;
   color: #ffffff;
+
   &:hover {
-    background: #3657d3;
+    background: var(--blue-font-color);
   }
 }
 
-.grey{
-  color: var(--text-gray)
+.grey {
+  color: var(--text-gray);
 }

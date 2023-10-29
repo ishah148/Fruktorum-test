@@ -1,14 +1,19 @@
 <template>
-  <ArticleList v-if="articlesInfo" :body="articlesInfo" />
+  <ArticleList
+    v-if="articlesInfo"
+    :data="{
+      body: articlesInfo,
+    }"
+  />
 </template>
 
 <script setup lang="ts">
-import ArticleList from "~/components/ArticleList.vue";
-import type { ArticlesPreview, ArticlesPreviewInfo } from "~";
-import {articlesPagePath} from "~/constants";
+import type { ArticlesPreview, ArticlesPreviewInfo } from "~/types";
+import { articlesPagePath } from "~/constants";
+
 const articlesInfo = ref<ArticlesPreviewInfo[]>();
 
-fetchArticles();
+await fetchArticles();
 
 async function fetchArticles() {
   const response = await useFetch<ArticlesPreview>(`/api/${articlesPagePath}`);
