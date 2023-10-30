@@ -1,21 +1,26 @@
 <template lang="pug">
-html
-  body
-    div(class="slider__wrapper")
-      Swiper(navigation, :modules="[SwiperNavigation, SwiperEffectCreative]", :slides-per-view="1", :loop="true", :effect="'creative'", :autoplay=`{
+div(class="slider__wrapper")
+  Swiper(
+    navigation,
+    :modules="[SwiperNavigation, SwiperEffectCreative]",
+    :slides-per-view="1",
+    :loop="true",
+    :effect="'creative'",
+    :autoplay=`{
       delay: 8000,
       disableOnInteraction: true,
-    }`, :creative-effect=`{
-      prev: {
-        shadow: false,
-        translate: ['-100%', 0, -1],
-      },
-      next: {
-        translate: ['100%', 0, 0],
-      },
-    }`)
-        SwiperSlide(v-for="(slide, id) in props.data", :key="id + Math.random()")
-          img(:src="slide", alt="photo")
+    }`,
+    :creative-effect=`{
+    prev: {
+      shadow: false,
+      translate: ['-100%', 0, -1],
+    },
+    next: {
+      translate: ['100%', 0, 0],
+    },
+  }`)
+    SwiperSlide(v-for="(slide, id) in props.data", :key="id + Math.random()")
+      img(:src="slide", alt="photo")
 </template>
 
 <script setup lang="ts">
@@ -43,6 +48,7 @@ const props = defineProps<{
   &:hover {
     background: var(--blue-font-color);
   }
+
   &::after {
     font-size: 12px;
     font-weight: 800;

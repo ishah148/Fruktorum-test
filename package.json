@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --port 5175",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier .  --write --end-of-line crlf",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint --fix --ext .vue,.ts .",
     "type-check": "npx nuxi typecheck"
   },
   "devDependencies": {

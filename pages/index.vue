@@ -1,9 +1,8 @@
 <template lang="pug">
-html
-  body
-    ArticleList(v-if="articlesInfo", :data=`{
-    body: articlesInfo,
-  }`)
+ArticleList(
+  v-if="articlesInfo",
+  :data="{body: articlesInfo}"
+  )
 </template>
 
 <script setup lang="ts">

@@ -1,22 +1,14 @@
 <template lang="pug">
-html
-  body
-    .article-card
-      div(style="position: relative")
-        img.img(:src="props.image", alt="img")
-        Loader(v-if="isLoading")
-      p(class="article-card__description") {{ props.title }}
-      NuxtLink(:to="props.link")
-        button.btn-dark Читать
+.article-card
+  div(style="position: relative")
+    img.img(:src="props.image", alt="img")
+  p(class="article-card__description") {{ props.title }}
+  nuxt-link(:to="props.link")
+    button.btn-dark Читать
 </template>
 
 <script setup lang="ts">
-import { useImage } from "@vueuse/core";
-
-import Loader from "~/components/ui/Loader.vue";
-
 const props = defineProps<{ title: string; link: string; image: string }>();
-const { isLoading } = useImage({ src: props.image });
 </script>
 
 <style lang="scss">

@@ -1,10 +1,8 @@
 <template lang="pug">
-html
-  body
-    div(class="article-list__wrapper")
-      h2(v-if="data?.title") {{ data.title }}
-      div(class="article-list__container")
-        ArticleCard(v-for="article in body", :key="article.title", :image="article.image", :title="article.title", :link="article.link")
+div(class="article-list__wrapper")
+  h2(v-if="data?.title") {{ data.title }}
+  div(class="article-list__container")
+    ArticleCard(v-for="article in body", :key="article.title", :image="article.image", :title="article.title", :link="article.link")
 </template>
 
 <script setup lang="ts">

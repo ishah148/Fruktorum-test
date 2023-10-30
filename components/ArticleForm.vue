@@ -1,15 +1,13 @@
 <template lang="pug">
-html
-  body
-    div(class="article-form__wrapper")
-      div(class="article-form__container")
-        img(:src="photo", alt="img", class="article-form__image")
-        div(class="article-form__form-container")
-          h2(class="article-form__invite-text") Стань участником проекта
-          input.blog-input(type="text", name="text", placeholder="Имя")
-          input.blog-input(type="tel", name="tel", placeholder="Телефон")
-          input.blog-input(type="email", name="email", placeholder="Email")
-          button(class="article-form__submit-btn btn") Присоединится
+div(class="article-form__wrapper")
+  div(class="article-form__container")
+    img(:src="photo", alt="img", class="article-form__image")
+    div(class="article-form__form-container")
+      h2(class="article-form__invite-text") Стань участником проекта
+      input.blog-input(type="text", name="text", placeholder="Имя")
+      input.blog-input(type="tel", name="tel", placeholder="Телефон")
+      input.blog-input(type="email", name="email", placeholder="Email")
+      button(class="article-form__submit-btn btn") Присоединится
 </template>
 
 <script setup lang="ts">

@@ -1,8 +1,6 @@
 <template lang="pug">
-html
-  body
-    .container
-      .loader
+.container
+  .loader
 </template>
 
 <style scoped lang="scss">

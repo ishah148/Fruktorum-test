@@ -1,9 +1,7 @@
 <template lang="pug">
-html
-  body
-    div(style="position: relative", :="$attrs")
-      img.img(:src="props.src", alt="img")
-      Loader(v-if="isLoading")
+div(style="position: relative", :="$attrs")
+  img.img(:src="props.src", alt="img")
+  Loader(v-if="isLoading")
 </template>
 
 <script setup lang="ts">

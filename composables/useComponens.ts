@@ -18,7 +18,7 @@ export default function useComponent() {
   };
   type cmpKeys = keyof typeof componentList;
 
-  function getComponent(cmpName: cmpKeys | string) {
+  function getComponentByName(cmpName: cmpKeys | string) {
     if (!(cmpName in componentList)) {
       return null;
     }
@@ -26,6 +26,6 @@ export default function useComponent() {
   }
 
   return {
-    getComponent,
+    getComponentByName,
   };
 }

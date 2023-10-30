@@ -1,22 +1,20 @@
 <template lang="pug">
-html
-  body
-    div(class="article__wrapper")
-      img(class="article__image", :src="props.data?.image", alt="photo")
-      div(class="article__description-container")
-        h1.short-description {{ props.data.title }}
-        .info.font-body-2
-          div(class="info__count-container")
-            TimeIcon(filled)
+div(class="article__wrapper")
+  img(class="article__image", :src="props.data?.image", alt="photo")
+  div(class="article__description-container")
+    h1.short-description {{ props.data.title }}
+    .info.font-body-2
+      div(class="info__count-container")
+        TimeIcon(filled)
 
-            | {{ props.data.views_count }}
-            | прочитали статью
-          div(class="info__time-container")
-            WatchIcon(filled)
+        | {{ props.data.views_count }}
+        | прочитали статью
+      div(class="info__time-container")
+        WatchIcon(filled)
 
-            | {{ props.data.reading_time }}
-            | мин время чтения
-        .description {{ props.data.short_description }}
+        | {{ props.data.reading_time }}
+        | мин время чтения
+    .description {{ props.data.short_description }}
 </template>
 
 <script setup lang="ts">
