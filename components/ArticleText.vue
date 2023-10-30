@@ -59,6 +59,11 @@ const props = defineProps<{
       height: 100px;
       background-image: url(assets/icons/quoute.svg);
       background-repeat: no-repeat;
+      @media (max-width: $md-size){
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+      }
     }
 
     p {

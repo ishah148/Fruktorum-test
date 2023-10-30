@@ -20,6 +20,9 @@ const body = computed(() => props.data?.articles || props.data?.body);
 
 <style lang="scss">
 .article-list__wrapper {
+  @media (max-width: $lg-size){
+    padding:0 var(--primary-padding);
+  }
   h2 {
     margin-bottom: 50px;
     margin-left: 50px;

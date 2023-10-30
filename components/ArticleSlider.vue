@@ -45,6 +45,11 @@ const props = defineProps<{
   height: 60px;
   background: var(--primary-black);
 
+  @media (max-width: $sm-size) {
+    width: 30px;
+    height: 30px;
+  }
+
   &:hover {
     background: var(--blue-font-color);
   }
